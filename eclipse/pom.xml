@@ -47,6 +47,8 @@
         <module>eclipse-sightly-ui</module>
         <module>sightly-feature</module>
         <!-- test modules activated per profile -->
+       	<module>p2update</module>
+      	<module>source-bundle</module>
     </modules>
 
     <build>
@@ -141,7 +143,6 @@
                     <goals>clean install</goals>
                     <pushChanges>false</pushChanges>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <preparationProfiles>apache-release</preparationProfiles>
                     <releaseProfiles>apache-release,sign-with-gpg</releaseProfiles>
                     <!-- See https://wiki.eclipse.org/Tycho/Release_Workflow -->
                     <preparationGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho.version}:update-eclipse-metadata org.apache.maven.plugins:maven-scm-plugin:1.9.5:add org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</preparationGoals>
@@ -267,10 +268,6 @@
                     </plugin>
                 </plugins>
             </build>
-            <modules>
-            	<module>p2update</module>
-            	<module>source-bundle</module>
-            </modules>
         </profile>
         <profile>
             <id>eclipse-test</id>
